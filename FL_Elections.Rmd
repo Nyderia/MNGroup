@@ -1,0 +1,25 @@
+---
+title: "Untitled"
+output: html_document
+---
+```{r}
+library(tidyverse)
+
+states <- c("FL", "NC", "OH", "PA")
+
+houseelection <- house_elections %>%
+ filter(state == states) %>%
+ rename(cand_id = fec_id)
+
+candi <- candidates %>%
+ rename(state = cand_office_state) %>%
+ filter(state == states)
+
+elections2 <- full_join(houseelection, candi, by = "cand_id")
+
+ggplot(data = elections2, aes(x = general_votes, y = primary_votes, colour = party)) +
+  geom_jitter()
+
+
+```
+
