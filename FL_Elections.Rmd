@@ -43,3 +43,14 @@ ggplot(data = elections2, aes(x = general_votes, y = primary_votes,  colour = pa
 
 ```
 
+
+**Summary:**
+
+This data graph compares the number of primary and general votes for both Republican and Democratic parties in the swing states: Florida, Pennsylvania, and Ohio -- ultimately displaying the wins and losses of each party. We decided to utilize swing states in order to determine how much impact the primary votes effect the change in actual wins of the general election.
+
+The term ‘swing states’ refers to those particular states that are not reliably Republican or Democratic, making them significant in determining which party wins the Electoral College. In other words, these states can literally swing any parties’ lead in the presidential election. Take the infamous Hillary-Trump race in 2017 for example. Hillary Clinton won the popular vote over Trump, but because Trump ultimately had more votes in the Electoral College, he won presidency.
++In relation to our data graphic, we also see this same concept. As we ascend the x-axis, we recognize that Republicans congregate on both ends of the spectrum, and Democrats are primarily in the middle. Meaning that it seems as though Democrats receive more recognition in the primary, but Republicans have a greater amount of votes in the general election and win. 
+
+What could this mean for the nature of Democrats and Republicans in these particular states? Let’s take a step back and view the entirety of our data graphic. From the data of all three states, we can see that the primary votes for both parties look as if they are literally climbing over each other to reach more than 20000 votes. With the Democrats having more visibility in the color shown along the primary votes, along with the big win as the outlier, the party is evidently more recognized. However, this data shows that none (disregarding the outlier) of these parties actually won in the general elections. Making it more obvious, when we look at the general election votes, that the result of winning or losing the primary doesn’t finish the battle. Now, looking at the data from the general elections votes, we can see that even though the Democrats appear to generally have more votes than Republicans, the Democrats don’t actually win. There’s an outstanding amount of wins for the Republican party, but there’s also a whopping amount losses as well. Our data graphic might just conclude the true form of the definition of a swing state. Generally, on both sides of the primary and general voting, there’s a ton of losses for both parties and they both resemble a literal race for votes. Our data also shows that there’s a great variation between the parties’ votes and wins and losses. Ultimately, we see why the swing states are super important to win during the Elections, and just by these three states, we can see their impact. 
+
+[Link to git](https://github.com/Nyderia/MNGroup)
