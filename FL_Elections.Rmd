@@ -3,7 +3,8 @@ title: "Swing State Votes"
 author: "Nyderia Hall & Margaret Szlosek"
 output:
   html_document:
-    code folding: hide
+    code_folding: hide
+    
 ---
 ```{r}
 library(tidyverse)
@@ -13,6 +14,9 @@ library(ggthemes)
 ```
 
 ```{r, warning=FALSE, message=FALSE, hide = TRUE}
+
+load(file="house_elections.rda")
+load(file="candidates.rda")
 
 states <- c("FL", "PA", "OH") #chosen as they are swing states
 
