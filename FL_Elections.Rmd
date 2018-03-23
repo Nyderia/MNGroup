@@ -12,7 +12,7 @@ library(ggthemes)
 
 ```
 
-```{r}
+```{r, warning=FALSE, message=FALSE, hide = TRUE}
 
 states <- c("FL", "PA", "OH") #chosen as they are swing states
 
