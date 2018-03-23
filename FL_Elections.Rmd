@@ -5,6 +5,7 @@ output: html_document
 ```{r}
 library(tidyverse)
 library(RColorBrewer)
+library(ggthemes)
 
 ```
 
@@ -28,7 +29,13 @@ elections2 <- full_join(houseelection, candi, by = "cand_id")
 
 ggplot(data = elections2, aes(x = general_votes, y = primary_votes,  colour = party)) +
   geom_text(aes(label=ge_winner)) +
-  scale_fill_brewer(palette="set1")
+  scale_colour_manual(values=c("D"="royalblue", "R"="firebrick2")) +
+  ggtitle("Election Votes in Swing States ") +
+  labs(x = "General Election Votes (1000s)") +
+  labs (y = "Primary Election Votes (1000s)") +
+  scale_x_continuous(breaks=c(50000, 100000, 150000, 200000, 250000), labels = c("50", "100", "150", "200", "250")) +
+  scale_y_continuous(breaks=c(20000, 40000, 60000, 80000), labels = c("20,", "40", "60", "80")) +
+  theme_economist()
 
 
 ```
