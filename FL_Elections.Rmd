@@ -4,21 +4,30 @@ output: html_document
 ---
 ```{r}
 library(tidyverse)
+library(RColorBrewer)
 
-states <- c("FL", "NC", "OH", "PA")
+```
+
+```{r}
+
+states <- c("FL", "PA", "OH")
+
+parties <- c("D", "R")
 
 houseelection <- house_elections %>%
  filter(state == states) %>%
- rename(cand_id = fec_id)
+  filter(party==parties) %>%
+ rename(cand_id = fec_id) 
 
 candi <- candidates %>%
  rename(state = cand_office_state) %>%
- filter(state == states)
+ filter(state == states) 
 
 elections2 <- full_join(houseelection, candi, by = "cand_id")
 
 ggplot(data = elections2, aes(x = general_votes, y = primary_votes, colour = party)) +
-  geom_jitter()
+  geom_text(aes(label=states)) +
+  scale_fill_brewer(palette="set1")
 
 
 ```
