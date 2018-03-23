@@ -1,6 +1,9 @@
 ---
-title: "Untitled"
-output: html_document
+title: "Swing State Votes"
+author: "Nyderia Hall & Margaret Szlosek"
+output:
+  html_document:
+    code folding: hide
 ---
 ```{r}
 library(tidyverse)
