@@ -10,23 +10,24 @@ library(RColorBrewer)
 
 ```{r}
 
-states <- c("FL", "PA", "OH")
+states <- c("FL", "PA", "OH") #chosen as they are swing states
 
-parties <- c("D", "R")
 
-houseelection <- house_elections %>%
- filter(state == states) %>%
-  filter(party==parties) %>%
- rename(cand_id = fec_id) 
+parties <- c("D", "R") #filtering by major parties
 
-candi <- candidates %>%
- rename(state = cand_office_state) %>%
- filter(state == states) 
+houseelection <- house_elections %>% #creating a copy of house_elections
+ filter(state == states) %>% #filtering by swing states name above
+  filter(party==parties) %>% #filtering by major parties
+ rename(cand_id = fec_id) #the ids of candidates appear in both tables, but under different names, so one is being renamed
+
+candi <- candidates %>% #creating copy of candidates
+ rename(state = cand_office_state) %>% #the lables for states are different for the two data sets, so they must be renamed so they can merge properly
+ filter(state == states) #filter by states above
 
 elections2 <- full_join(houseelection, candi, by = "cand_id")
 
-ggplot(data = elections2, aes(x = general_votes, y = primary_votes, colour = party)) +
-  geom_text(aes(label=states)) +
+ggplot(data = elections2, aes(x = general_votes, y = primary_votes,  colour = party)) +
+  geom_text(aes(label=ge_winner)) +
   scale_fill_brewer(palette="set1")
 
 
